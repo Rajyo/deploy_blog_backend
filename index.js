@@ -7,7 +7,7 @@ const categoryController = require('./controllers/categoryController')
 const userProfileController = require('./controllers/userProfileController')
 //const multer = require('multer')
 const app = express()
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 5000
 // connect db
 mongoose.set('strictQuery', false);
 
@@ -54,4 +54,4 @@ app.all("*", (req, res)=>{
     res.status(404).json({message: '404 Not Found'})
 })
 // connect server
-app.listen(PORT || 5000, () => console.log('Server has been started successfully'))
+app.listen(PORT , () => console.log('Server has been started successfully'))
